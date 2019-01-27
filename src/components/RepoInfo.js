@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
-import { Container, Content, Header, Left, Right, Body, Title, Text, Button, List, ListItem, Icon } from 'native-base';
+import { Container, Content, Text, Button, List, ListItem } from 'native-base';
 
 class RepoInfo extends Component {
   render() {
     return(
       <Container>
-        <Header>
-          <Left>
-            <Button transparent onPress= {()=>Actions.pop()}>
-              <Icon name='arrow-back' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Repo Info</Title>
-          </Body>
-          <Right />
-        </Header>
         <Content>
           <List>
             <ListItem>
@@ -43,6 +31,7 @@ class RepoInfo extends Component {
 }
 
 function mapStateToProps(state){
+	console.log('RepoInfo', state)
   return {
     activeRepo: state.activeRepo
 	};
